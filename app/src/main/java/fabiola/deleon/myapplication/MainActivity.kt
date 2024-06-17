@@ -6,10 +6,12 @@ import RecyclerViewHelper.Adaptador
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fabiola.deleon.myapplication.R.id.txtCorreo
 import fabiola.deleon.myapplication.R.id.txtfecha
@@ -38,6 +40,8 @@ class MainActivity : AppCompatActivity() {
         val txtfecha = findViewById<EditText>(txtfecha)
         val btncrear = findViewById<Button>(R.id.btnCrear)
         val rcvItems= findViewById<RecyclerView>(R.id.rcvitems)
+
+        rcvItems.layoutManager =  LinearLayoutManager(this)
 
 
         fun obtenerDatos(): List<DataClassTicket> {
